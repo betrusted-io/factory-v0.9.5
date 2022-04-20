@@ -5,3 +5,4 @@ v0.9.5 is what is on `main`, and at the v0.9.5 tag. It is the version shipped or
 
 v0.9.8 is on the `v0.9.8` branch and tag. It was snapshotted on April 20, 2022.
 
+Reminder: this script can't renew the PDDB area because it's outside the addressable range of JTAG-over-SPI.
