@@ -44,4 +44,4 @@ cd ..
 sudo ./reset_soc.sh
 
 echo "newify complete"
-
+echo "Reminder: there is a limitation that the PDDB can't be blanked with this script, becaause it isn't addressible via JTAG's 24-bit addressing."
