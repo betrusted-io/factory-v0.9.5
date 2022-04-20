@@ -1,0 +1,3 @@
+[submodule "jtag-trace"]
+	path = jtag-trace
+	url = https://github.com/betrusted-io/jtag-trace.git
