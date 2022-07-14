@@ -5,7 +5,7 @@ echo "power on"
 sudo ./vbus.sh 1
 
 echo "erasing SOC flash"
-cd jtag-trace && ./jtag_gpio.py -f precursors/blank.bin --erase -a 0 --erase-len=0xf80000 -r
+cd jtag-trace && ./jtag_gpio.py -f precursors/blank.bin --erase -a 0 --erase-len=0x2000000 -r
 
 cd ..
 
