@@ -9,8 +9,12 @@ cd jtag-trace && ./jtag_gpio.py -f precursors/blank.bin --erase -a 0 --erase-len
 
 cd ..
 
+echo "erasing residual EC and WF200 staging artifacts"
+./usb_update.py -e precursors/blank.bin
+./usb_update.py -w precursors/blank.bin
+
 echo "erasing EC flash"
-sudo ../fomu-flash/fomu-flash -w precursors/blank.bin
+sudo ../fomu-flash/fomu-flash -w precursors/blank_ec.bin
 echo "erasing WF200 flash"
 sudo ../fomu-flash/fomu-flash -w precursors/blank.bin -a 0x9C000
 
