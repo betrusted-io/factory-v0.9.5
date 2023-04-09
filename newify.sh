@@ -11,6 +11,8 @@ cd ..
 
 echo "erasing EC flash"
 sudo ../fomu-flash/fomu-flash -w precursors/blank.bin
+echo "erasing WF200 flash"
+sudo ../fomu-flash/fomu-flash -w precursors/blank.bin -a 0x9C000
 
 sleep 2
 
