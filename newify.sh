@@ -7,7 +7,7 @@ echo "power on"
 sudo ./vbus.sh 1
 
 echo "erasing residual EC and WF200 staging artifacts"
-sudo ./usb_update.py -e precursors/blank.bin
+sudo ./usb_update.py -e precursors/blank_ec.bin
 sudo ./usb_update.py -w precursors/blank.bin
 
 echo "erasing SOC flash"
