@@ -1,17 +1,19 @@
 #!/bin/bash
 set -e
 
+echo "REMEMBER: script now requires USB connection to host, to erase EC artifacts"
+
 echo "power on"
 sudo ./vbus.sh 1
+
+echo "erasing residual EC and WF200 staging artifacts"
+sudo ./usb_update.py -e precursors/blank.bin
+sudo ./usb_update.py -w precursors/blank.bin
 
 echo "erasing SOC flash"
 cd jtag-trace && ./jtag_gpio.py -f precursors/blank.bin --erase -a 0 --erase-len=0x2000000 -r
 
 cd ..
-
-echo "erasing residual EC and WF200 staging artifacts"
-./usb_update.py -e precursors/blank.bin
-./usb_update.py -w precursors/blank.bin
 
 echo "erasing EC flash"
 sudo ../fomu-flash/fomu-flash -w precursors/blank_ec.bin
